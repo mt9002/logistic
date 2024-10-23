@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Register</title>
+        <link rel="stylesheet" th:href="@{/css/style.css}">
+        <style>
+            /* Estilo general para el contenedor del formulario */
+            .container {
+                max-width: 500px; /* Ancho máximo del contenedor */
+                margin: 0 auto; /* Centra el contenedor horizontalmente */
+                padding: 20px; /* Padding interno del contenedor */
+                border: 1px solid #ddd; /* Borde del contenedor */
+                border-radius: 8px; /* Bordes redondeados */
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra del contenedor */
+                background-color: #f9f9f9; /* Fondo claro para el contenedor */
+            }
+
+            /* Estilo para el encabezado del formulario */
+            .container h1 {
+                text-align: center; /* Centra el texto del encabezado */
+                font-size: 24px; /* Tamaño de fuente para el encabezado */
+                color: #333; /* Color del texto */
+                margin-bottom: 20px; /* Espacio debajo del encabezado */
+            }
+
+            /* Estilo para las etiquetas del formulario */
+            label {
+                font-size: 14px; /* Tamaño de fuente más pequeño */
+                font-weight: 600; /* Texto en negrita */
+                color: #555; /* Color del texto */
+                margin-bottom: 8px; /* Espacio debajo de las etiquetas */
+                display: block; /* Hace que la etiqueta ocupe toda la línea */
+            }
+
+            /* Estilo para los campos de entrada del formulario */
+            input[type="text"],
+            input[type="password"],
+            input[type="email"] {
+                width: 80%; /* Ancho completo del contenedor */
+                padding: 12px; /* Padding interno más amplio */
+                margin-bottom: 20px; /* Espacio debajo de cada campo */
+                border: 1px solid #ccc; /* Borde ligero */
+                border-radius: 6px; /* Bordes más redondeados */
+                box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1); /* Sombra interna sutil */
+                font-size: 14px; /* Tamaño de fuente para el texto dentro del campo */
+                transition: border-color 0.3s, box-shadow 0.3s; /* Transiciones suaves para los cambios de borde y sombra */
+            }
+
+            /* Estilo para los campos de entrada al enfocar */
+            input[type="text"]:focus,
+            input[type="password"]:focus,
+            input[type="email"]:focus {
+                border-color: #007bff; /* Color del borde al enfocar */
+                box-shadow: 0 0 5px rgba(0, 123, 255, 0.25); /* Sombra externa al enfocar */
+                outline: none; /* Quita el borde azul predeterminado del navegador */
+            }
+
+            /* Estilo específico para el botón de enviar */
+            button[type="submit"] {
+                background-color: #007bff; /* Color de fondo azul */
+                color: white; /* Texto blanco */
+                border: none; /* Sin borde */
+                padding: 12px; /* Padding interno */
+                border-radius: 6px; /* Bordes redondeados */
+                cursor: pointer; /* Cambia el cursor al pasar por encima */
+                font-size: 16px; /* Tamaño de fuente */
+                transition: background-color 0.3s; /* Transición suave para el cambio de color de fondo */
+                display: block; /* Hace que el botón ocupe toda la línea */
+                width: 100%; /* Ancho completo del contenedor */
+            }
+
+            /* Estilo para el botón de enviar cuando se pasa por encima */
+            button[type="submit"]:hover {
+                background-color: #0056b3; /* Color de fondo más oscuro */
+            }
+            /* Estilo general para la navegación */
+            nav {
+                background-color: #f8f9fa; /* Fondo claro para el nav */
+                padding: 2px; /* Espacio interno para los enlaces de nav */
+                border-radius: 8px; /* Bordes redondeados */
+                margin-bottom: 50px; /* Espacio debajo del nav */
+                width: 60px; /* Ancho fijo para el nav */
+                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+            }
+
+            /* Estilo para los enlaces dentro de nav */
+            nav a {
+                display: block; /* Hace que los enlaces ocupen toda la línea */
+                padding: 8px 12px; /* Espacio interno de los enlaces */
+                color: #007bff; /* Color azul discreto para los enlaces */
+                text-decoration: none; /* Quita el subrayado de los enlaces */
+                font-size: 14px; /* Tamaño de fuente */
+                font-weight: 500; /* Peso de fuente medio */
+                border-radius: 4px; /* Bordes redondeados en los enlaces */
+                margin-bottom: 5px; /* Espacio entre los enlaces */
+                transition: background-color 0.2s, color 0.2s; /* Transición suave para cambios de color */
+            }
+
+            /* Estilo para los enlaces al pasar el ratón */
+            nav a:hover {
+                background-color: #e2e6ea; /* Fondo gris claro al pasar el ratón */
+                color: #0056b3; /* Color azul más oscuro al pasar el ratón */
+            }
+
+            /* Estilo para el contenedor de navegación (opcional) */
+            .nav-container {
+                display: flex; /* Usa flexbox para controlar la disposición */
+                flex-direction: column; /* Coloca los nav uno debajo del otro */
+                align-items: flex-start; /* Alinea los nav a la izquierda */
+            }
+
+
+        </style>
+    </head>
+    <body>
+        <nav>
+            <a th:href="@{/home}">Home</a>
+        </nav>
+
+        <div class="container">
+            <h1>Register</h1>
+            <form id="registerForm">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required>
+                <br>
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+                <br>
+                <label for="firstName">First Name:</label>
+                <input type="text" id="firstName" name="firstName" required>
+                <br>
+                <label for="lastName">Last Name:</label>
+                <input type="text" id="lastName" name="lastName" required>
+                <br>
+                <label for="country">Country:</label>
+                <input type="text" id="country" name="country" required>
+                <br>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                <br>
+                <button type="submit">Register</button>
+            </form>
+        </div>
+
+        <script>
+            document.getElementById('registerForm').addEventListener('submit', function (event) {
+                event.preventDefault(); // Prevenir el comportamiento por defecto del formulario
+
+                const data = {
+                    userName: document.getElementById('username').value,
+                    password: document.getElementById('password').value,
+                    firstName: document.getElementById('firstName').value,
+                    lastName: document.getElementById('lastName').value,
+                    country: document.getElementById('country').value,
+                    email: document.getElementById('email').value
+                };
+
+                fetch('/auth/register', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(data)
+                })
+                        .then(response => response.json())
+                        .then(data => {
+                            alert('Registration successful!');
+                            window.location.href = '/home'; // Redirigir a la página principal después del registro
+                        })
+                        .catch(error => {
+                            console.error('Error:', error);
+                        });
+            });
+        </script>
+    </body>
+</html>
